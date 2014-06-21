@@ -17,9 +17,12 @@ import static social_network.SearchDBAO.url;
 import static social_network.SearchDBAO.user;
 
 public class SearchDBAO {
-    public static final String url = "jdbc:mysql://eceweb.uwaterloo.ca:3306/";
-    public static final String user = "user_pgadigon";
-    public static final String pwd = "user_pgadigon";
+    //public static final String url = "jdbc:mysql://eceweb.uwaterloo.ca:3306/";
+    //public static final String user = "user_pgadigon";
+    //public static final String pwd = "user_pgadigon";
+    public static final String url = "jdbc:mysql://localhost:3306/";
+    public static final String user = "root";
+    public static final String pwd = "";
 
    public static ArrayList<Patient> getSearchPatients(PatientSearch ps) 
            throws ClassNotFoundException, SQLException {

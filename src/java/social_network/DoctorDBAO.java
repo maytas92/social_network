@@ -16,9 +16,12 @@ import static social_network.DoctorDBAO.url;
 import static social_network.DoctorDBAO.user;
 
 public class DoctorDBAO {
-    public static final String url = "jdbc:mysql://eceweb.uwaterloo.ca:3306/";
-    public static final String user = "user_pgadigon";
-    public static final String pwd = "user_pgadigon";
+    //public static final String url = "jdbc:mysql://eceweb.uwaterloo.ca:3306/";
+    //public static final String user = "user_pgadigon";
+    //public static final String pwd = "user_pgadigon";
+    public static final String url = "jdbc:mysql://localhost:3306/";
+    public static final String user = "root";
+    public static final String pwd = "";
 
     public static void testConnection()
             throws ClassNotFoundException, SQLException {
@@ -57,7 +60,7 @@ public class DoctorDBAO {
        try {
            con = getConnection();
            stmt = con.createStatement();
-           PreparedStatement pStmt = con.prepareStatement("SELECT login FROM doctor_view WHERE login=?");
+           PreparedStatement pStmt = con.prepareStatement("SELECT login FROM Doctor WHERE login=?");
            pStmt.setString(1, login);
 
            ResultSet resultSet = pStmt.executeQuery();

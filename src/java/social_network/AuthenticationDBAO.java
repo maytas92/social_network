@@ -25,9 +25,12 @@ import java.util.logging.Logger;
 
 public class AuthenticationDBAO {
     private final static int ITERATION_NUMBER = 1000;
-    public static final String url = "jdbc:mysql://eceweb.uwaterloo.ca:3306/";
-    public static final String user = "user_pgadigon";
-    public static final String pwd = "user_pgadigon";
+    //public static final String url = "jdbc:mysql://eceweb.uwaterloo.ca:3306/";
+    //public static final String user = "user_pgadigon";
+    //public static final String pwd = "user_pgadigon";
+    public static final String url = "jdbc:mysql://localhost:3306/";
+    public static final String user = "root";
+    public static final String pwd = "";
 
     public static void testConnection()
             throws ClassNotFoundException, SQLException {
@@ -88,7 +91,7 @@ public class AuthenticationDBAO {
                password="";
            }
  
-           ps = con.prepareStatement("SELECT password, salt FROM authentication_view WHERE login = ?");
+           ps = con.prepareStatement("SELECT password, salt FROM Authentication WHERE login = ?");
            ps.setString(1, login);
            rs = ps.executeQuery();
            String digest, salt;
